@@ -9,15 +9,15 @@ const CakeItem = ({cake, addToBasket}) => {
         addToBasket(cake.id)
     }
     return (
-        <>
+      <>
         <li>
-        {cake.name}
-        <br></br>
-        £{cake.price}
-
+          {cake.name}
+          <br></br>£{cake.price}
+          <br></br>
+          <img src={cake.url} width='150' height='150'></img>
         </li>
         <button onClick={handleClick}>Click</button>
-        </>
+      </>
     )
 }
 

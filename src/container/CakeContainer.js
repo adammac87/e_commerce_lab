@@ -10,37 +10,42 @@ import ShowCake from "../components/ShowCakes";
 
 
 
+
 const CakeContainer = () => {
     const [basket, setBasket] = useState([]);
     const [addedCake, setAddedCake] = useState ([])
     const [cakes, setCakes] = useState([
       {
         id: 1,
-        name: 'Marble Cake',
+        name: 'Bear Cake',
         price: 2.5,
         inBasket: false,
         quantity: 1,
+        url: 'https://imgcdn.floweraura.com/boo-bear-cake-9909650ca-AA.jpg?tr=w-264,dpr-2,q-70',
       },
       {
         id: 2,
-        name: 'Carrot Cake',
+        name: 'Tiger Cake',
         price: 3.0,
         inBasket: false,
         quantity: 1,
+        url: 'https://imgcdn.floweraura.com/cartoon-bear-designer-cake-9909630ca-A.jpg?tr=w-264,dpr-2,q-70',
       },
       {
         id: 3,
-        name: 'Lemon Cake',
+        name: 'Bird Cake',
         price: 1.5,
         inBasket: true,
         quantity: 1,
+        url: 'https://imgcdn.floweraura.com/Angry-Birds-Cake.jpg?tr=w-264,dpr-2,q-70',
       },
       {
         id: 4,
-        name: 'Choclate Cake',
+        name: 'Bat Cake',
         price: 5.5,
         inBasket: true,
         quantity: 1,
+        url: 'https://imgcdn.floweraura.com/batman-birthday-cake-9935280ca.jpg?tr=w-264,dpr-2,q-70',
       },
     ])
 

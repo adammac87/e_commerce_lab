@@ -26,7 +26,7 @@ const totalBought = cakesInBasket.reduce(
               <ul>
                 <li>
                   {cake.name}
-                  {cake.quantity}
+                  
                   <br></br> £{cake.price}
                   
                   <br></br>
@@ -36,8 +36,8 @@ const totalBought = cakesInBasket.reduce(
               
             )
           })}
-        <p>You Have bought  <articles>{totalBought}</articles>     amount of cakes</p>
-        <p>Total Price<br></br>{total}</p>
+        <p>You Have bought  <articles>{totalBought}</articles>      cake(s)</p>
+        <p>Total Price<br></br>£{total}</p>
       </>
     )
     
