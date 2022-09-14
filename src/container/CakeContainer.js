@@ -2,30 +2,46 @@ import React, {useState, useEffect} from "react";
 import CakeList from "../components/CakeList";
 import ShoppingBasket from "../components/ShoppingBasket";
 import CakeItem from "../components/CakeItem";
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import NavBar from '../components/NavBar'
+import Home from "../components/Home";
+import ShowCake from "../components/ShowCakes";
+
+
 
 
 const CakeContainer = () => {
     const [basket, setBasket] = useState([]);
     const [addedCake, setAddedCake] = useState ([])
     const [cakes, setCakes] = useState([
-        {
-            id: 1,
-            name: "Marble Cake",
-            price: 2.50,
-            inBasket: false
-        },
-        {
-            id: 2,
-            name: "Carrot Cake",
-            price: 3.00,
-            inBasket: false
-        },
-        {
-            id: 3,
-            name: "Lemon Cake",
-            price: 1.50,
-            inBasket:true
-        }
+      {
+        id: 1,
+        name: 'Marble Cake',
+        price: 2.5,
+        inBasket: false,
+        quantity: 1,
+      },
+      {
+        id: 2,
+        name: 'Carrot Cake',
+        price: 3.0,
+        inBasket: false,
+        quantity: 1,
+      },
+      {
+        id: 3,
+        name: 'Lemon Cake',
+        price: 1.5,
+        inBasket: true,
+        quantity: 1,
+      },
+      {
+        id: 4,
+        name: 'Choclate Cake',
+        price: 5.5,
+        inBasket: true,
+        quantity: 1,
+      },
     ])
 
     // const [newCake, setNewCake] = useState("")
@@ -66,19 +82,36 @@ const CakeContainer = () => {
     })
 
     return (
-        <>
-        <CakeList cakes={cakes} addToBasket={addToBasket}/>
-        <ShoppingBasket cakesInBasket={cakesInBasket}/>
+      <>
+        <Router>
+          <NavBar />
+
+          <Routes>
+            <Route
+              exact
+              path='/'
+              element={<CakeList cakes={cakes} addToBasket={addToBasket} />}
+            />
+            <Route
+              path='/ShoppingBasket'
+              element={<ShoppingBasket cakesInBasket={cakesInBasket} />}
+              
+            />
+            <Route
+              path='/ShowCake/id'
+              element={<CakeItem cakesInBasket={cakesInBasket} />}
+            />
+          </Routes>
+        </Router>
+
         {/* <ul>{addCakeList}</ul> */}
 
-    
         {/* <form onSubmit = {addCake}>
         <label htmlFor="new-to-do">Add Cake</label>
         <input type="text" id = "new-cake" value ={newCake}
         onChange = {handleCakeNameChange}/>
         <input type ='submit' value='add new cake'/> 
       </form> */}
-      
       </>
     )
 

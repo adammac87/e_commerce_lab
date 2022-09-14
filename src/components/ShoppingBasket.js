@@ -5,20 +5,40 @@ import CakeList from "./CakeList";
 
 const shoppingBasket = ({cakesInBasket, }) => {
 
+const total = cakesInBasket.reduce(
+  (subTotal, cake) => (subTotal += cake.price * cake.quantity),
+  0
+)
+
+const totalBought = cakesInBasket.reduce(
+  (subTotal, cake) => (subTotal += cake.quantity* cake.quantity),
+  0
+)
+
+
     return (
-        <>
+      <>
         <h2>Shopping Basket</h2>
-        <ul>
-        {cakesInBasket.map(cake => {
-            return ( 
-                <li> {cake.name}</li>
 
+        
+          {cakesInBasket.map((cake) => {
+            return (
+              <ul>
+                <li>
+                  {cake.name}
+                  {cake.quantity}
+                  <br></br> £{cake.price}
+                  
+                  <br></br>
+                </li>
+              </ul>
+
+              
             )
-        })}
-       
-
-        </ul>
-        </>
+          })}
+        <p>You Have bought  <articles>{totalBought}</articles>     amount of cakes</p>
+        <p>Total Price<br></br>{total}</p>
+      </>
     )
     
 }

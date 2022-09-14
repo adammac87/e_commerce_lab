@@ -10,6 +10,7 @@ const CakeList = ({cakes, addToBasket}) => {
 
     return (
         <div>
+        <h2>Cakes for Sale</h2>
             <ul>
                 {cakeItems}
 
