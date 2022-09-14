@@ -94,13 +94,17 @@ const CakeContainer = () => {
           <Routes>
             <Route
               exact
-              path='/'
+              path='/about' element={<Home/>}
+            
+            />
+            <Route
+              exact
+              path='/CakeList'
               element={<CakeList cakes={cakes} addToBasket={addToBasket} />}
             />
             <Route
               path='/ShoppingBasket'
               element={<ShoppingBasket cakesInBasket={cakesInBasket} />}
-              
             />
             <Route
               path='/ShowCake/id'
