@@ -1,10 +1,10 @@
 import React from "react";
 import CakeItem from "./CakeItem";
 
-const CakeList = ({cakes}) => {
+const CakeList = ({cakes, addToBasket}) => {
     const cakeItems = cakes.map((cake) => {
         return (
-            <CakeItem cake={cake} key={cake.id}/>
+            <CakeItem cake={cake} addToBasket={addToBasket} key={cake.id}/>
         );
     });
 
