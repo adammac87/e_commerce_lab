@@ -5,6 +5,8 @@ const CakeItem = ({cake}) => {
     return (
         <li>
         {cake.name}
+        <br></br>
+        £{cake.price}
 
 
         </li>
